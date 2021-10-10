@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Successfully submitted expense</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <style>
+        h1 {
+            text-align: center;
+            animation-duration: 8s;
+            animation-name: slidein;
+            animation-iteration-count: infinite;
+        
+    }
+    p{
+        text-align: center;
+    }
+
+        @keyframes slidein {
+            0% {
+                margin-left: 0%;
+            }
+
+            50% {
+                margin-left: 300px;
+            }
+
+            100% {
+                margin-left: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="m-3">Nice! You spent money.</h1>
+
+
+    <p><a href="/expense">Submit another expense here</a></p>
+    <p><a href="https://docs.google.com/spreadsheets/d/1Mv6rkHzpzYsvJxoVFO9rh7xNvlXYGBlkR5g1sB3P9QY/edit?usp=sharing">View all expenses</a></p>
+    
+</body>
+
+</html>
