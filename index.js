@@ -1,13 +1,13 @@
 const express = require('express');
 const { google } = require('googleapis');
+const fs = require('fs');
+const password = fs.readFileSync('password.txt', 'utf8');
 
-//authentication and specification of spreadsheet-BEGIN************
+//authentication and specification of spreadsheet-BEGINNING************
 const auth = new google.auth.GoogleAuth({
     keyFile: "expenses-credentials.json",
-
     scopes: "https://www.googleapis.com/auth/spreadsheets",
 });
-
 
  // Create client instance for auth
 var client = null;
@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));//allows us to parse  html data 
 
 
 app.get("/expense", (req,res) => {
-    res.render('index');
+    res.render('index', { password });
 })
 
 app.get("/success", (req,res) => {
@@ -41,6 +41,7 @@ app.get("/success", (req,res) => {
 app.post("/", async (req, res) => {
 
     const { name, amount, category, date , planned, payed } = req.body;
+
 
     console.log(req.body);
 
