@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <% var x=Math.floor(Math.random()*255) %>
+        <% var y=Math.floor(Math.random()*255) %>
+            <% var z=Math.floor(Math.random()*255) %>
+                <style>
+                    body {
+                        background-color: rgb(<%=x %>, <%=y %>, <%=z %>);
+                    }
+
+                    h1 {
+                        text-align: center;
+                        color: rgb(<%=255 -x %>, <%=255-y %>, <%=255-z %>);
+                    }
+
+                    form {
+                        text-align: center;
+                        color: rgb(<%=255 -x %>, <%=255-y %>, <%=255-z %>);
+                    }
+
+                    input {
+                        text-align: center;
+    
+                    }
+                    select{
+                        text-align: center;
+                    }
+                </style>
+</head>
+
+<body>
+    <h1>Tell me what you've done with your money ;) </h1>
+    <div class="col-md-2 offset-md-5">
+        <form action="/" method="POST" novalidate class="validated-form">
+            <div class="mb-3">
+                <label class="form-label" for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="fries" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="amount">Amount:</label>
+                <input type="number" class="form-control" id="amount" name="amount" placeholder="50" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="category">Category:</label>
+                <select id="category" class="form-select" name="category" placeholder="" required>
+                    <option value="bills">bills</option>
+                    <option value="leisure">leisure</option>
+                    <option value="leisure with friends">leisure with friends</option>
+                    <option value="date">date</option>
+                    <option value="transportation">transportation</option>
+                    <option value="sports">sports</option>
+                    <option value="food">food</option>
+                    <option value="presents">presents</option>
+                    <option value="learning">learning</option>
+                    <option value="other">other</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="date">Date:</label>
+                <input type="date" class="form-control" id="date"  name="date" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="planned">Planned:</label>
+                <input type="text" class="form-control" id="planned" name="planned" value="no" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="payed">Payed:</label>
+                <input type="text" class="form-control" id="payed" name="payed" value="yes" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="password">Password:</label>
+                <input type="text" class="form-control" id="password" name="password" pattern= <%= password %> value="seesma" required>
+            </div>
+            <button class="btn btn-secondary" type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="/js/date.js"></script>
+</body>
+
+</html>
+
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.validated-form')
+
+        // Loop over them and prevent submission
+        Array.from(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
