@@ -3,13 +3,16 @@ const { google } = require('googleapis');
 const fs = require('fs');
 const password = fs.readFileSync('password.txt', 'utf8');
 const path = require('path');
-
+// const { GoogleSpreadsheet } = require('google-spreadsheet');
 
 //authentication and specification of spreadsheet-BEGINNING************
 const auth = new google.auth.GoogleAuth({
     keyFile: "expenses-credentials.json",
     scopes: "https://www.googleapis.com/auth/spreadsheets",
 });
+
+
+
 
  // Create client instance for auth
 var client = null;
