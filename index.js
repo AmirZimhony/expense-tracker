@@ -37,6 +37,10 @@ app.use(express.urlencoded({ extended: true }));//allows us to parse  html data 
 
 app.use(express.static(path.join(__dirname, 'public')));//makes it possible to open this file from different folders
 
+app.get('/', (req, res) => {
+    res.render('index', { password });
+});
+
 app.get("/expense", (req,res) => {
     res.render('index', { password });
 })
