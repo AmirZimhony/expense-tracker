@@ -1,7 +1,8 @@
 require('dotenv').config()
 const express = require('express');
 const fs = require('fs');
-const password = fs.readFileSync('password.txt', 'utf8');
+// const password = fs.readFileSync('password.txt', 'utf8');  //relevant when ran on local machine
+const password = process.env.PASSWORD;
 const path = require('path');
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 const doc = new GoogleSpreadsheet('1Mv6rkHzpzYsvJxoVFO9rh7xNvlXYGBlkR5g1sB3P9QY');
