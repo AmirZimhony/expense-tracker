@@ -3,7 +3,7 @@ require('dotenv').config()
 // Initialize the sheet - doc ID is the long id in the sheets URL
 const doc = new GoogleSpreadsheet('1Mv6rkHzpzYsvJxoVFO9rh7xNvlXYGBlkR5g1sB3P9QY');
 // console.log(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL)
-console.log(process.env.GOOGLE_PRIVATE_KEY)
+//console.log(process.env.GOOGLE_PRIVATE_KEY)
 
 
 const authGoogle = async function start() {

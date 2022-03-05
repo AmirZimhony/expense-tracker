@@ -1,11 +1,9 @@
+require('dotenv').config()
 const express = require('express');
-const { google } = require('googleapis');
 const fs = require('fs');
 const password = fs.readFileSync('password.txt', 'utf8');
 const path = require('path');
-// const { GoogleSpreadsheet } = require('google-spreadsheet');
 const { GoogleSpreadsheet } = require('google-spreadsheet');
-require('dotenv').config()
 const doc = new GoogleSpreadsheet('1Mv6rkHzpzYsvJxoVFO9rh7xNvlXYGBlkR5g1sB3P9QY');
 let sheet = null;
 
