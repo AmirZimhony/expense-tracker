@@ -59,8 +59,11 @@ app.get('*',(req,res)=>{
     res.render('404');
 })
 
+
+
+const port = process.env.PORT || 3000;
 //defining port to listen on - 3000 for Andre 3000
-app.listen(3000, () => {
-    console.log('listening...')
+app.listen(port, () => {
+    console.log(`listening... on port ${port} `)
 }
 )
